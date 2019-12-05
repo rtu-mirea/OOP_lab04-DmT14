@@ -62,7 +62,7 @@ public class Main {
             file5.mkdir();
 
             // Задание 1, упр. 3.2. Сформировать массив файлов, находящихся в папке приложения, используя метод list(). Отобразить содержимое массива
-            File file0 = new File("C:\\Users\\user\\Desktop\\task_io");
+            File file0 = new File("C:\\Users\\user\\Desktop\\task_io"); // П О М Е Н Я Т Ь  П У Т Ь ! ! ! //
 
             String[] files1 = file0.list();
             System.out.println("\nФайлы папки приложения методом list():");
@@ -208,10 +208,12 @@ public class Main {
 
             char[] buf = new char[128];
             for(int i = 0, j = 0; i < file6.length(); i++, j++) {
-                if(j == buf.length - 1)
+                if(j == buf.length) {
                     j = 0;
+                    outb.write("\r\n");
+                }
                 buf[j] = (char)inb.read();
-                outb.write(buf[j] + "\r\n");
+                outb.write(buf[j]);
             }
 
             inb.close();
